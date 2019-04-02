@@ -1,6 +1,29 @@
 import React from "react"
+import { Link } from "gatsby"
 import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
+import styled from "styled-components"
+
+const LogoWrapper = styled.div`
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: flex-start;
+  align-content: flex-start;
+  flex-flow: row nowrap;
+
+  > a {
+    flex: 0 0 230px;
+    width: 230px;
+  }
+`
+
+const SiteTitle = styled.div`
+  flex: 1 0 auto;
+  padding: 15px;
+`
 
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
@@ -13,13 +36,15 @@ import Img from "gatsby-image"
  * - `StaticQuery`: https://gatsby.dev/staticquery
  */
 
-const Image = () => (
+export const LogoImage = () => (
   <StaticQuery
     query={graphql`
       query {
-        placeholderImage: file(relativePath: { eq: "gatsby-astronaut.png" }) {
+        placeholderImage: file(
+          relativePath: { eq: "devisioona-united-icon.png" }
+        ) {
           childImageSharp {
-            fluid(maxWidth: 300) {
+            fluid(maxWidth: 230) {
               ...GatsbyImageSharpFluid
             }
           }
@@ -29,4 +54,14 @@ const Image = () => (
     render={data => <Img fluid={data.placeholderImage.childImageSharp.fluid} />}
   />
 )
-export default Image
+
+const Logo = ({ siteTitle }) => (
+  <LogoWrapper>
+    <Link to="/">
+      <LogoImage />
+    </Link>
+    <SiteTitle>{siteTitle}</SiteTitle>
+  </LogoWrapper>
+)
+
+export default Logo
