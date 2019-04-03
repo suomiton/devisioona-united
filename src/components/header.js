@@ -1,10 +1,10 @@
-import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
 
 import Logo from "./logo"
-import { WidthWrapper, UnorderedList, InlineListItem } from "./common"
+import { WidthWrapper } from "./common"
+import MainMenu from "./mainmenu"
 
 const HeaderWrapper = styled.header`
   position: relative;
@@ -26,40 +26,12 @@ const ContentWrapper = styled(WidthWrapper)`
   height: 100%;
 `
 
-const MainMenu = styled.div`
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: flex-end;
-  align-content: center;
-  height: 100%;
-
-  > ul {
-    flex: 0 0 auto;
-    align-self: center;
-  }
-`
-
 const Header = ({ siteTitle }) => (
   <HeaderWrapper>
     <Nav>
       <ContentWrapper>
         <Logo siteTitle={siteTitle} />
-        <MainMenu>
-          <UnorderedList>
-            <InlineListItem>
-              <Link to="/devisioona">Devisioona?</Link>
-            </InlineListItem>
-            <InlineListItem>
-              <Link to="/kokoonpano">Kokoonpano</Link>
-            </InlineListItem>
-            <InlineListItem>
-              <Link to="/otteluohjelma">Otteluohjelma</Link>
-            </InlineListItem>
-            <InlineListItem>
-              <Link to="/ota-yhteytta">Ota yhteyttä</Link>
-            </InlineListItem>
-          </UnorderedList>
-        </MainMenu>
+        <MainMenu />
       </ContentWrapper>
     </Nav>
   </HeaderWrapper>

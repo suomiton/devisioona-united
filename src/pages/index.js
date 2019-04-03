@@ -1,8 +1,10 @@
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
+import styled from "styled-components"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import { WidthWrapper } from "../components/common"
 
 const IndexPage = () => (
   <StaticQuery
@@ -10,7 +12,7 @@ const IndexPage = () => (
       query {
         placeholderImage: file(relativePath: { eq: "front.jpg" }) {
           childImageSharp {
-            fluid(maxWidth: 1400) {
+            fluid(maxWidth: 1440) {
               ...GatsbyImageSharpFluid
             }
           }
@@ -21,9 +23,11 @@ const IndexPage = () => (
       <Layout>
         <SEO
           title="Devisioona United"
-          keywords={[`devisioona`, `jalkapallo`]}
+          keywords={[`devisioona`, `jalkapallo`, "ohjelmisto", "konsultit"]}
         />
-        <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+        <WidthWrapper>
+          <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+        </WidthWrapper>
       </Layout>
     )}
   />

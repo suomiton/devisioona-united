@@ -14,13 +14,16 @@ import Reset from "../utils/reset"
 import Typography from "../utils/typography"
 import Theme from "../utils/theme"
 import Header from "./header"
+import Footer from "./footer"
 
 const GlobalStyles = createGlobalStyle`
   ${Reset}
   ${Typography}
 `
 
-const ContentWrapper = styled.main``
+const ContentWrapper = styled.main`
+  margin-bottom: 195px;
+`
 
 const Layout = ({ children }) => (
   <ThemeProvider theme={Theme}>
@@ -39,10 +42,7 @@ const Layout = ({ children }) => (
           <GlobalStyles />
           <Header siteTitle={data.site.siteMetadata.title} />
           <ContentWrapper>{children}</ContentWrapper>
-          <footer>
-            © {new Date().getFullYear()},{" "}
-            <a href="https://www.devisioona.fi">Devisioona</a>
-          </footer>
+          <Footer />
         </>
       )}
     />

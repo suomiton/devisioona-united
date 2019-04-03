@@ -18,11 +18,16 @@ const Typography = css`
   }
   a {
     text-decoration: none;
-    color: ${props => props.theme.colors.pink};
 
+    &:link,
+    &:visited {
+      color: ${props => props.theme.colors.linkGrey};
+    }
     &:hover,
-    &:focus {
-      text-decoration: underline;
+    &:focus,
+    &:active {
+      text-decoration: none;
+      color: ${props => props.theme.colors.green};
     }
   }
 `
