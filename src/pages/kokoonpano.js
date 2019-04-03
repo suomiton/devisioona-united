@@ -3,10 +3,10 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const OtteluohjelmaPage = () => (
+const KokoonpanoPage = () => (
   <Layout>
-    <SEO title="Otteluohjelma | Devisioona United" />
+    <SEO title="Joukkueen kokoonpano | Devisioona United" />
   </Layout>
 )
 
-export default OtteluohjelmaPage
+export default KokoonpanoPage
