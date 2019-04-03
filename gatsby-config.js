@@ -13,13 +13,6 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `static`,
-        path: `${__dirname}/src/static`,
-      },
-    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-sharp`,
@@ -33,6 +26,13 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/devisioona-united-icon.png`, // This path is relative to the root of the site.
+      },
+    },
+    {
+      resolve: "gatsby-source-palloliitto",
+      options: {
+        gamesScheduleUrl:
+          "https://www.palloliitto.fi/torneopal/ajax/[torneopal:team_schedule:team=133797%26amp;season=2019%26amp;key=A4YDZ6FZ2M]",
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
