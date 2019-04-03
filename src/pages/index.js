@@ -12,7 +12,7 @@ const IndexPage = () => (
       query {
         placeholderImage: file(relativePath: { eq: "front.jpg" }) {
           childImageSharp {
-            fluid(maxWidth: 1440) {
+            fluid(maxWidth: 1440, quality: 70) {
               ...GatsbyImageSharpFluid
             }
           }
