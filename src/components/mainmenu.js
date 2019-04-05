@@ -19,7 +19,8 @@ const MainMenuWrapper = styled.div`
 
 const MenuLink = styled(Link)`
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 400;
+  font-size: 20px;
   letter-spacing: -1px;
 `
 

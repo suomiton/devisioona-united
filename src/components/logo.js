@@ -23,6 +23,9 @@ const LogoWrapper = styled.div`
 const SiteTitle = styled.div`
   flex: 1 0 auto;
   padding: 15px;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 32px;
 `
 
 /*

@@ -21,8 +21,14 @@ const GlobalStyles = createGlobalStyle`
   ${Typography}
 `
 
+const SiteWrapper = styled.div`
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+`
+
 const ContentWrapper = styled.main`
-  margin-bottom: 195px;
+  flex-grow: 1;
 `
 
 const Layout = ({ children }) => (
@@ -40,9 +46,11 @@ const Layout = ({ children }) => (
       render={data => (
         <>
           <GlobalStyles />
-          <Header siteTitle={data.site.siteMetadata.title} />
-          <ContentWrapper>{children}</ContentWrapper>
-          <Footer />
+          <SiteWrapper>
+            <Header siteTitle={data.site.siteMetadata.title} />
+            <ContentWrapper>{children}</ContentWrapper>
+            <Footer />
+          </SiteWrapper>
         </>
       )}
     />

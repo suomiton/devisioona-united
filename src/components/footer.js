@@ -9,11 +9,7 @@ const FooterWrapper = styled.footer`
   height: 195px;
   text-align: center;
   border-top: 1px solid ${({ theme }) => theme.colors.grey};
-  position: absolute;
-  bottom: 0;
-  left: 0;
   width: 100%;
-  margin-top: 195px;
 `
 
 const ImageWrapper = styled.div`
