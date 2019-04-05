@@ -48,7 +48,7 @@ export const LogoImage = () => (
         ) {
           childImageSharp {
             fluid(maxWidth: 230) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_noBase64
             }
           }
         }
