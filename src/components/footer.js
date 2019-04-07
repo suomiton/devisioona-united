@@ -10,6 +10,7 @@ const FooterWrapper = styled.footer`
   text-align: center;
   border-top: 1px solid ${({ theme }) => theme.colors.grey};
   width: 100%;
+  z-index: 1;
 `
 
 const ImageWrapper = styled.div`

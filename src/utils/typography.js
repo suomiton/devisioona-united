@@ -5,6 +5,7 @@ const Typography = css`
 
   body {
     font: 100%/1.618 ${props => props.theme.fonts.primary};
+    overflow-x: hidden;
   }
   p {
     font-size: 16px;

@@ -6,7 +6,7 @@ import styled from "styled-components"
 
 const LogoWrapper = styled.div`
   position: absolute;
-  left: 0;
+  left: 20px;
   top: 50%;
   transform: translateY(-50%);
   display: flex;

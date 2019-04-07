@@ -7,11 +7,34 @@ import SEO from "../components/seo"
 import SplitLayout from "../components/split-layout"
 import { Heading } from "../components/common"
 
+const Table = styled.table`
+  width: 100%;
+  border-collapse: collapse;
+
+  > tbody {
+    > tr {
+      &:hover {
+        background-color: #f6f6f6;
+      }
+    }
+  }
+`
+
 const TableRow = styled.tr``
 
-const TableHeader = styled.th``
+const TableHeader = styled.th`
+  padding: 6px 8px;
+  font-size: 14px;
+  font-weight: 600;
+  border-bottom: 4px solid #ddd;
+  text-align: left;
+`
 
-const TableColumn = styled.td``
+const TableColumn = styled.td`
+  padding: 6px 8px;
+  font-size: 14px;
+  font-weight: 300;
+`
 
 class OtteluohjelmaPage extends React.Component {
   render() {
@@ -57,9 +80,11 @@ class OtteluohjelmaPage extends React.Component {
           return (
             <Layout>
               <SEO title="Otteluohjelma | Devisioona United" />
-              <SplitLayout image={data.placeholderImage.childImageSharp.fluid}>
+              <SplitLayout
+                image={data.placeholderImage.childImageSharp.fluid.src}
+              >
                 <Heading>Otteluohjelma - Kausi 2019</Heading>
-                <table>
+                <Table>
                   <thead>
                     <TableRow>
                       <TableHeader>Pvm</TableHeader>
@@ -74,7 +99,7 @@ class OtteluohjelmaPage extends React.Component {
                       this.renderGameScheduleRow(m, idx)
                     )}
                   </tbody>
-                </table>
+                </Table>
               </SplitLayout>
             </Layout>
           )
