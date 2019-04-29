@@ -74,6 +74,13 @@ exports.sourceNodes = (
     return result
   }
 
+  const calcPoints = (winsStr, drawsStr) => {
+    const wins = parseInt(winsStr)
+    const draws = parseInt(drawsStr)
+
+    return wins * 3 + draws * 1
+  }
+
   const parseScoreTable = html => {
     const $table = $("table", html)
     const competitionName = $table.find("caption > .competitionname").text()
@@ -85,19 +92,22 @@ exports.sourceNodes = (
         const wins = chTxt(tr, ".wins")
         const draws = chTxt(tr, ".draws")
         const losses = chTxt(tr, ".losses")
+        const points = calcPoints(wins, draws)
+
         return {
           team,
           played,
           wins,
           draws,
           losses,
+          points,
         }
       })
     )
     const result = {
       competitionName,
       groupName,
-      teams,
+      teams: teams.slice(1),
     }
     return result
   }
