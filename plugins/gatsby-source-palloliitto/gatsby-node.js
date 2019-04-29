@@ -69,7 +69,7 @@ exports.sourceNodes = (
       })
     )
     const result = {
-      matches,
+      matches: matches.slice(1),
     }
     return result
   }
