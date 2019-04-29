@@ -70,12 +70,14 @@ class OtteluohjelmaPage extends React.Component {
                 wins
                 draws
                 losses
+                points
               }
             }
           }
         `}
         render={data => {
           const { matches } = data.palloliittoGamesSchedule
+          const scoreTable = data.palloliittoScoreTable
 
           return (
             <Layout>
@@ -100,6 +102,28 @@ class OtteluohjelmaPage extends React.Component {
                     )}
                   </tbody>
                 </Table>
+
+                <Heading>
+                  Sarjataulukko - {scoreTable.competitionName} -{" "}
+                  {scoreTable.groupName}
+                </Heading>
+                <Table>
+                  <thead>
+                    <TableRow>
+                      <TableHeader>Joukkue</TableHeader>
+                      <TableHeader>Ottelut</TableHeader>
+                      <TableHeader>Voitot</TableHeader>
+                      <TableHeader>Tasapelit</TableHeader>
+                      <TableHeader>Häviöt</TableHeader>
+                      <TableHeader>Pisteet</TableHeader>
+                    </TableRow>
+                  </thead>
+                  <tbody>
+                    {scoreTable.teams.map((t, idx) =>
+                      this.renderScoreTableRow(t, idx)
+                    )}
+                  </tbody>
+                </Table>
               </SplitLayout>
             </Layout>
           )
@@ -118,6 +142,19 @@ class OtteluohjelmaPage extends React.Component {
         <TableColumn>{match.home}</TableColumn>
         <TableColumn>{match.away}</TableColumn>
         <TableColumn>{match.score}</TableColumn>
+      </TableRow>
+    )
+  }
+
+  renderScoreTableRow(team, idx) {
+    return (
+      <TableRow key={idx}>
+        <TableColumn>{team.team}</TableColumn>
+        <TableColumn>{team.played}</TableColumn>
+        <TableColumn>{team.wins}</TableColumn>
+        <TableColumn>{team.draws}</TableColumn>
+        <TableColumn>{team.losses}</TableColumn>
+        <TableColumn>{team.points}</TableColumn>
       </TableRow>
     )
   }
