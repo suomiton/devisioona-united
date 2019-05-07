@@ -17,7 +17,7 @@ export const InlineListItem = styled.li`
   display: block;
   padding: 8px 15px;
 
-  ${media.tablet`
+  ${media.desktop`
     display: inline-block;
     margin: 0 5px;
     padding: 0;

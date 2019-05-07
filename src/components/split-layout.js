@@ -1,7 +1,6 @@
 import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
-import { WidthWrapper } from "./common"
 
 import media from "../utils/media"
 

@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import styled from "styled-components"
+import media from "../utils/media"
 
 const LogoWrapper = styled.div`
   position: absolute;
@@ -26,6 +27,11 @@ const SiteTitle = styled.div`
   font-weight: 400;
   text-transform: uppercase;
   font-size: 32px;
+  display: none;
+
+  ${media.tablet`
+    display: block;
+  `}
 `
 
 /*
