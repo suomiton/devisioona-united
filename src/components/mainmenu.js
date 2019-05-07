@@ -3,14 +3,16 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 
 import media from "../utils/media"
-import { UnorderedList, InlineListItem } from "./common"
-import Hamburger from "./hamburger"
+import Theme from "../utils/theme"
+import { UnorderedList, InlineListItem, UnStyledButton } from "./common"
+import HamburgerIcon from "./hamburgericon"
+import CloseIcon from "./closeicon"
 
 const MainMenuWrapper = styled.div`
   position: fixed;
   height: 100%;
   width: 100%;
-  background-color: rgba(255, 255, 255, 90%);
+  background-color: rgba(255, 255, 255, 95%);
   left: 0;
   top: 0;
   display: ${props => (props.isVisible ? "flex" : "none")};
@@ -34,7 +36,6 @@ const MenuList = styled(UnorderedList)`
   flex: 0 0 auto;
   ${media.desktop`
     align-self: center;
-    height: 0;
     overflow: hidden;
   `}
 `
@@ -44,6 +45,9 @@ const MenuLinkItem = styled(InlineListItem)`
   width: 100%;
   text-align: center;
   padding: 15px;
+  ${media.desktop`
+    width: auto;
+  `}
 `
 
 const MenuLink = styled(Link)`
@@ -53,12 +57,22 @@ const MenuLink = styled(Link)`
   letter-spacing: -1px;
 `
 
-const MobileMenu = styled.div`
-  display: ${({ isVisible }) => isVisible ? 'block' : 'none' };
+const MobileMenu = styled(UnStyledButton)`
+  display: ${({ isVisible }) => (isVisible ? "block" : "none")};
   position: absolute;
   right: 15px;
   top: 50%;
   transform: translateY(-50%);
+
+  ${media.desktop`
+    display: none;
+  `}
+`
+
+const CloseMobileMenu = styled(UnStyledButton)`
+  position: absolute;
+  top: 15px;
+  right: 15px;
 
   ${media.desktop`
     display: none;
@@ -92,9 +106,12 @@ class MainMenu extends React.Component {
               <MenuLink to="/ota-yhteytta">Ota yhteyttä</MenuLink>
             </MenuLinkItem>
           </MenuList>
+          <CloseMobileMenu onClick={this.onToggleMenu}>
+            <CloseIcon color={Theme.colors.green} />
+          </CloseMobileMenu>
         </MainMenuWrapper>
         <MobileMenu onClick={this.onToggleMenu} isVisible={!menuVisible}>
-          <Hamburger />
+          <HamburgerIcon color={Theme.colors.green} />
         </MobileMenu>
       </>
     )

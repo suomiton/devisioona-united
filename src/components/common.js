@@ -30,3 +30,16 @@ export const Heading = styled.h1`
   font-weight: 300;
   margin: 20px 0;
 `
+
+export const UnStyledButton = styled.button`
+  border: 0 none;
+  outline: none;
+  box-shadow: none;
+  background-color: transparent;
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+    background-color: transparent;
+  }
+`

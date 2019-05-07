@@ -16,9 +16,16 @@ const LogoWrapper = styled.div`
   flex-flow: row nowrap;
 
   > a {
-    flex: 0 0 230px;
-    width: 230px;
+    flex: 0 0 130px;
+    width: 130px;
   }
+
+  ${media.tablet`
+    > a {
+      flex: 0 0 230px;
+      width: 230px;
+    }
+  `}
 `
 
 const SiteTitle = styled.div`

@@ -1,6 +1,12 @@
 import React from "react"
 
-const IconWrapper = ({ props, children }) => <svg {...props}>{children}</svg>
+class IconWrapper extends React.Component {
+    render() {
+        const { children, ...rest } = this.props;
+        return <svg {...rest}>{children}</svg>
+    }
+}
+
 
 IconWrapper.defaultProps = {
     width: '32px',
