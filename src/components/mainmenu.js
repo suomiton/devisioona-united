@@ -12,7 +12,7 @@ const MainMenuWrapper = styled.div`
   position: fixed;
   height: 100%;
   width: 100%;
-  background-color: rgba(255, 255, 255, 95%);
+  background-color: rgba(255, 255, 255, 0.95);
   left: 0;
   top: 0;
   display: ${props => (props.isVisible ? "flex" : "none")};
