@@ -37,7 +37,6 @@ const IndexPage = () => (
     `}
     render={data => {
       const { fixed } = data.placeholderImage.childImageSharp
-      console.log(fixed)
       return (
         <Layout>
           <SEO
