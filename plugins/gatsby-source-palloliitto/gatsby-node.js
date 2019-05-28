@@ -112,6 +112,26 @@ exports.sourceNodes = (
     return result
   }
 
+  const parsePlayerStatsTable = html => {
+    const $table = $("table", html)
+    const players = Array.from(
+      $table.find("tbody tr").map((_, tr) => {
+        const number = chTxt(tr, ".jersey")
+        const name = chTxt(tr, ".player")
+        const matches = chTxt(tr, ".match")
+        const goals = chTxt(tr, ".goal")
+        const yellowCards = chTxt(tr, ".yellowcard")
+        const redCards = chTxt(tr, ".redcard")
+
+        return {
+          number, name, matches, goals, yellowCards, redCards
+        }
+      })
+    )
+
+    return { players }
+  }
+
   const fetchGamesSchedule = url =>
     createPLNode(
       url,
@@ -128,10 +148,19 @@ exports.sourceNodes = (
       parseScoreTable
     )
 
-  const { gamesScheduleUrl, scoreTableUrl } = configOptions
+  const fetchPlayerStatsTable = url =>
+    createPLNode(
+      url,
+      "palloliitto-playerstats-table",
+      "PalloliittoPlayerStatsTable",
+      parsePlayerStatsTable
+    )
+
+  const { gamesScheduleUrl, scoreTableUrl, playerStatsUrl } = configOptions
 
   return Promise.all([
     fetchGamesSchedule(gamesScheduleUrl),
     fetchScoreTable(scoreTableUrl),
+    fetchPlayerStatsTable(playerStatsUrl),
   ])
 }

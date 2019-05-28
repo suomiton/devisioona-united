@@ -35,6 +35,7 @@ module.exports = {
           "https://www.palloliitto.fi/torneopal/ajax/[torneopal:team_schedule:team=133797%26amp;season=2019%26amp;key=A4YDZ6FZ2M]",
         scoreTableUrl:
           "https://www.palloliitto.fi/torneopal/ajax/[torneopal:scoretable:competition=hkihl19%26amp;class=HM_5%26amp;group=1%26amp;key=A4YDZ6FZ2M]",
+        playerStatsUrl: "https://www.palloliitto.fi/torneopal/ajax/[torneopal:team_players:team=133797%26amp;key=A4YDZ6FZ2M]"
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
