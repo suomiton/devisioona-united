@@ -22,7 +22,6 @@ const ContentWrapper = styled.section`
   flex: 0 0 100%;
   align-self: center;
   padding: 60px 20px 60px 20px;
-  order: 2;
 
   ${media.desktop1440`
     flex: 0 0 50%;
@@ -36,11 +35,9 @@ const ImageWrapper = styled.section`
   background-repeat: no-repeat;
   background-size: cover;
   box-shadow: 0 5px 8px -3px #000;
-  order: 1;
   height: 450px;
 
   ${media.desktop1440`
-    order: 2;
     height: auto;
   `}
 `
