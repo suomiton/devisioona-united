@@ -7,13 +7,12 @@ import SEO from "../components/seo"
 import SplitLayout from "../components/split-layout"
 import { Heading } from "../components/common"
 
-const RosterWrapper = styled.section`
-`
+const RosterWrapper = styled.section``
 
 const GridRow = styled.div`
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-content: flex-start;
   font-size: 14px;
   font-weight: 300;
@@ -36,15 +35,24 @@ const GridColumn = styled.div`
 `
 
 const PlayerNumber = styled(GridColumn)`
-  flex: 0 0 75px;
+  flex: 0 0 45px;
 `
 const PlayerName = styled(GridColumn)`
   text-align: left;
+  flex: 1 1 150px;
 `
-const PlayerMatches = styled(GridColumn)``
-const PlayerGoals = styled(GridColumn)``
-const PlayerYellowCards = styled(GridColumn)``
-const PlayerRedCards = styled(GridColumn)``
+const PlayerMatches = styled(GridColumn)`
+  flex: 0 0 100px;
+`
+const PlayerGoals = styled(GridColumn)`
+  flex: 0 0 100px;
+`
+const PlayerYellowCards = styled(GridColumn)`
+  flex: 0 0 100px;
+`
+const PlayerRedCards = styled(GridColumn)`
+  flex: 0 0 100px;
+`
 
 class KokoonpanoPage extends React.Component {
   render() {
@@ -76,7 +84,9 @@ class KokoonpanoPage extends React.Component {
           return (
             <Layout>
               <SEO title="Joukkueen kokoonpano | Devisioona United" />
-              <SplitLayout image={data.placeholderImage.childImageSharp.fluid.src}>
+              <SplitLayout
+                image={data.placeholderImage.childImageSharp.fluid.src}
+              >
                 <Heading>Kokoonpano - Kausi 2019</Heading>
                 <RosterWrapper>
                   <GridRow className="heading">
@@ -87,7 +97,9 @@ class KokoonpanoPage extends React.Component {
                     <PlayerYellowCards>Keltaiset</PlayerYellowCards>
                     <PlayerRedCards>Punaiset</PlayerRedCards>
                   </GridRow>
-                  {players.sort(this.sortByGoals).map(p => this.renderPlayerRow(p))}
+                  {players
+                    .sort(this.sortByGoals)
+                    .map(p => this.renderPlayerRow(p))}
                 </RosterWrapper>
               </SplitLayout>
             </Layout>

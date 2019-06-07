@@ -5,7 +5,7 @@ import styled from "styled-components"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import SplitLayout from "../components/split-layout"
-import { Heading } from "../components/common"
+import { Heading, SubHeading } from "../components/common"
 
 const Table = styled.table`
   width: 100%;
@@ -85,7 +85,8 @@ class OtteluohjelmaPage extends React.Component {
               <SplitLayout
                 image={data.placeholderImage.childImageSharp.fluid.src}
               >
-                <Heading>Otteluohjelma - Kausi 2019</Heading>
+                <Heading>Otteluohjelma</Heading>
+                <SubHeading>Kausi 2019</SubHeading>
                 <Table>
                   <thead>
                     <TableRow>
@@ -103,10 +104,10 @@ class OtteluohjelmaPage extends React.Component {
                   </tbody>
                 </Table>
 
-                <Heading>
-                  Sarjataulukko - {scoreTable.competitionName} -{" "}
-                  {scoreTable.groupName}
-                </Heading>
+                <Heading>Sarjataulukko</Heading>
+                <SubHeading>
+                  {scoreTable.competitionName} - {scoreTable.groupName}
+                </SubHeading>
                 <Table>
                   <thead>
                     <TableRow>

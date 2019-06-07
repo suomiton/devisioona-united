@@ -29,6 +29,17 @@ export const Heading = styled.h1`
   line-height: 1.45;
   font-weight: 300;
   margin: 20px 0;
+
+  & + h2 {
+    margin-top: -20px;
+  }
+`
+
+export const SubHeading = styled.h2`
+  font-size: 24px;
+  line-height: 1.25;
+  font-weight: 300;
+  margin: 20px 0;
 `
 
 export const UnStyledButton = styled.button`
