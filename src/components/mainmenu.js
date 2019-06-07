@@ -99,9 +99,12 @@ class MainMenu extends React.Component {
             <MenuLinkItem>
               <MenuLink to="/kokoonpano">Kokoonpano</MenuLink>
             </MenuLinkItem>
-            <MenuLinkItem>
+            {
+              // TODO: Restore when you have some content for it
+              /* <MenuLinkItem>
               <MenuLink to="/devisioona">Devisioona?</MenuLink>
-            </MenuLinkItem>
+            </MenuLinkItem> */
+            }
             <MenuLinkItem>
               <MenuLink to="/ota-yhteytta">Ota yhteyttä</MenuLink>
             </MenuLinkItem>

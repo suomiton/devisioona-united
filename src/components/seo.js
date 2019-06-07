@@ -69,7 +69,7 @@ function SEO({ description, lang, meta, keywords, title }) {
         },
         {
           name: `google-site-verification`,
-          content: 'G0HMmsAd2E0E3fwFrMZYlr_lWZFNUIFQdRTMj0uRPHw',
+          content: "G0HMmsAd2E0E3fwFrMZYlr_lWZFNUIFQdRTMj0uRPHw",
         },
       ]
         .concat(
@@ -86,7 +86,7 @@ function SEO({ description, lang, meta, keywords, title }) {
 }
 
 SEO.defaultProps = {
-  lang: `en`,
+  lang: `fi`,
   meta: [],
   keywords: [],
   description: ``,

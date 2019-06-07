@@ -81,7 +81,16 @@ class OtteluohjelmaPage extends React.Component {
 
           return (
             <Layout>
-              <SEO title="Otteluohjelma | Devisioona United" />
+              <SEO
+                title="Otteluohjelma | Devisioona United"
+                description="Devisioona United jalkapallojoukkueen otteluohjelma ja sarjataulukko kaudelle 2019"
+                keywords={[
+                  "devisioona",
+                  "otteluohjelma",
+                  "sarjataulukko",
+                  "kausi 2019",
+                ]}
+              />
               <SplitLayout
                 image={data.placeholderImage.childImageSharp.fluid.src}
               >

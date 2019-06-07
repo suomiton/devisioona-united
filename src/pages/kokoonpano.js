@@ -83,7 +83,11 @@ class KokoonpanoPage extends React.Component {
           const { players } = data.palloliittoPlayerStatsTable
           return (
             <Layout>
-              <SEO title="Joukkueen kokoonpano | Devisioona United" />
+              <SEO
+                title="Joukkueen kokoonpano | Devisioona United"
+                description="Devisioona United jalkapallojoukkueen kokoonpano"
+                keywords={["devisioona", "jalkapallo", "joukkue", "kokoonpano"]}
+              />
               <SplitLayout
                 image={data.placeholderImage.childImageSharp.fluid.src}
               >
